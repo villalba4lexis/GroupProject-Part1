@@ -1,6 +1,6 @@
 from . import orders, order_details, recipes, sandwiches, resources
 
-from ..dependencies.database import engine
+from ..dependencies.database import engine, Base
 
 
 def index():
@@ -9,3 +9,6 @@ def index():
     recipes.Base.metadata.create_all(engine)
     sandwiches.Base.metadata.create_all(engine)
     resources.Base.metadata.create_all(engine)
+
+def create_all_tables():
+    Base.metadata.create_all(bind=engine)
