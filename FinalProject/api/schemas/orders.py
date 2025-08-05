@@ -7,6 +7,12 @@ from .order_details import OrderDetail
 
 class OrderBase(BaseModel):
     customer_name: str
+    customer_phone: Optional[str] = None
+    customer_address: Optional[str] = None
+    customer_email: Optional[str] = None
+    total_price: Optional[float] = None
+    status: Optional[str] = None
+    tracking_number: Optional[str] = None
     description: Optional[str] = None
 
 
